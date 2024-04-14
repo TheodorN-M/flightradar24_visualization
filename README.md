@@ -2,6 +2,13 @@
 
 This repository contains code for visualizing flight paths with animated markers on a Matplotlib plot, superimposed on geographical coastlines. It uses data from CSV files to create comprehensive visual representations of flights, updating in real-time to simulate movement.
 
+## Preview
+
+![Flight HV5685](resources/HV5685.png)
+
+This image depicts the flight path for HV5685, visualized in the flight animation software. The image provides a snapshot of the dynamic path plotting and coastline integration.
+
+
 ## Installation
 
 Before running the scripts, ensure you have Python installed on your system. The project depends on several Python libraries, including Matplotlib, Numpy, and Pandas. You can install all required dependencies with pip:
