@@ -44,6 +44,10 @@ The script provides the following functionality:
 - **Animation**: Visualizes the flight path using an animated marker that moves according to the flight's recorded data points.
 - **Geographical Context**: Plots coastlines to provide geographical context for the flight path.
 
+![Flight SK909](resources/SK909.png)
+Another example snapshot of a SK909 flight from Copenhagen (CPH) to New York (JFK)
+
+
 ## Contributing
 
 Contributions to this repository are welcome. Here are some ways you can contribute:
