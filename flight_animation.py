@@ -25,16 +25,19 @@ ax.set_ylim(bottom - buffer, top + buffer)
 x_data, y_data = [], []
 ln, = ax.plot([], [], 'b-', animated=True)  
 
+alt_text = ax.text(0.01, 0.95, '', transform=ax.transAxes, ha='left', va='top', fontsize=9)
+
 def init():
     fp.plot_flight_path_and_coasts(ax, path, False)
-    return ln,
+    return ln, alt_text
 
 def update(frame):
-    lat, long = frame
+    lat, long, alt = frame
     x_data.append(long)
     y_data.append(lat)
     ln.set_data(x_data, y_data)
-    return ln,
+    alt_text.set_text(f"Altitude: {alt} ft")
+    return ln, alt_text
 
 positions = fp.handle_data(fp.load_flight(path))
 ani = FuncAnimation(fig, update, frames=positions, init_func=init, blit=True, interval=100)

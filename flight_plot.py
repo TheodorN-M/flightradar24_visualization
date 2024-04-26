@@ -19,7 +19,7 @@ class FlightInfo:
         self.min_long = 100
     
 
-        for lat, long in poses:
+        for lat, long, _ in poses:
             self.max_long = max(self.max_long, long)
             self.max_lat = max(self.max_lat, lat)
 
@@ -64,7 +64,8 @@ def handle_data(flight_data: list[list[str]]):
         pos = row[3].split(",")
         latitude = float(pos[0])
         longitude = float(pos[1])
-        positions.append((latitude, longitude))
+        altitude = float(row[4])
+        positions.append((latitude, longitude, altitude))
     return positions
 
 
