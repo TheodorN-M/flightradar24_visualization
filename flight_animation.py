@@ -2,27 +2,25 @@ import flight_plot as fp
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
-path = "data/BGO-AMS-ATH.csv"
-# path = "data/KL1953_34c792d0.csv"
+
+path = "data/HV5685_34c4fcbc.csv"
 # Get the flight info
 
 test_flight = fp.FlightInfo(path)
+buffer = 5
 
 # Find coordinates for flight plot
-left = min(test_flight.min_pos[1], test_flight.max_pos[1]) - 5
-right = max(test_flight.min_pos[1], test_flight.max_pos[1]) + 5
-top = max(test_flight.max_pos[0], test_flight.min_pos[0]) + 5
-bottom = min(test_flight.max_pos[0], test_flight.min_pos[0]) - 5
+left   = test_flight.min_long
+right  = test_flight.max_long
+top    = test_flight.max_lat
+bottom = test_flight.min_lat
 
 # Initialize the plot
 fig, ax = plt.subplots(figsize=((right-left) // 4, (top-bottom) // 4))
 
+ax.set_xlim(left - buffer, right + buffer) 
+ax.set_ylim(bottom - buffer, top + buffer) 
 
-ax.set_xlim(left, right) 
-ax.set_ylim(bottom, top) 
-
-# ax.set_xlim(-5, 45) 
-# ax.set_ylim(20, 70) 
 
 x_data, y_data = [], []
 ln, = ax.plot([], [], 'b-', animated=True)  
