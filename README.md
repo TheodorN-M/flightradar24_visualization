@@ -6,7 +6,7 @@ This repository contains code for visualizing flight paths with animated markers
 
 ![Flight HV5685](resources/HV5685.png)
 
-This image depicts the flight path for HV5685, visualized in the flight animation software. The image provides a snapshot of the dynamic path plotting and coastline integration.
+This image depicts the flight path for HV5685 from Amsterdam Schiphol, to Lanzarote, visualized in the flight animation software. The image provides a snapshot of the dynamic path plotting and coastline integration.
 
 
 ## Installation
