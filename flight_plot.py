@@ -13,8 +13,18 @@ class FlightInfo:
         self.direction = 0
 
         poses = handle_data(all_data)
-        self.max_pos = (max(poses))
-        self.min_pos = (min(poses))
+        self.max_lat = -100
+        self.max_long = -100
+        self.min_lat = 100
+        self.min_long = 100
+    
+
+        for lat, long in poses:
+            self.max_long = max(self.max_long, long)
+            self.max_lat = max(self.max_lat, lat)
+
+            self.min_long = min(self.min_long, long)
+            self.min_lat = min(self.min_lat, lat)
 
     def update_info(self, timestamp: int):
         self.position, self.altitude, self.speed, self.direction = self.flight_info[timestamp]
