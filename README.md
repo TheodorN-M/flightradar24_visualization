@@ -6,7 +6,13 @@ This repository contains code for visualizing flight paths with animated markers
 
 ![Flight HV5685](resources/HV5685.gif)
 
-This image depicts the flight path for HV5685 from Amsterdam Schiphol, to Lanzarote, visualized in the flight animation software. The image provides a snapshot of the dynamic path plotting and coastline integration, along with the plane's current altitude and direction.
+This animation depicts the flight path for HV5685 from Amsterdam Schiphol, to Lanzarote, visualized in the flight animation software. The gif provides a snapshot of the dynamic path plotting and coastline integration, along with the plane's current altitude and direction.
+
+## 3D Preview
+
+![Flight KL1953](resources/KL1953.gif)
+
+3D animation of flight KL1953 from Amsterdam Schipol to Athens
 
 
 ## Installation
