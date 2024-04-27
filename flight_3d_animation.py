@@ -13,7 +13,7 @@ ax = fig.add_subplot(projection='3d')
 # Get the flight info and plot limits
 test_flight = fp.FlightInfo(path)
 buffer = 5
-ln, = ax.plot([], [], [], 'b-', linewidth=2, animated=True)
+ln, = ax.plot([], [], [])
 
 ax.set_xlim3d([test_flight.min_long - buffer, test_flight.max_long + buffer])
 ax.set_xlabel('Longitude')
@@ -21,7 +21,7 @@ ax.set_xlabel('Longitude')
 ax.set_ylim3d([test_flight.min_lat - buffer, test_flight.max_lat + buffer])
 ax.set_ylabel('Latitude')
 
-ax.set_zlim3d([0, 40000])
+ax.set_zlim3d([0, 100000])
 ax.set_zlabel('Altitude')
 
 # Plot coastlines
@@ -41,7 +41,6 @@ def init():
 # Frame update
 def update(frame):
     lat, long, alt, direction = frame
-    print(frame)
 
     x_data.append(long)
     y_data.append(lat)
@@ -54,8 +53,8 @@ def update(frame):
 
     return ln, coord_alt_text
 
-positions = fp.handle_data(fp.load_flight(path))  # Make sure this includes direction
-ani = FuncAnimation(fig, update, frames=positions, init_func=init, interval=100)
+positions = fp.handle_data(fp.load_flight(path))  
+ani = FuncAnimation(fig, update, frames=positions, interval=100, blit= False)
 
 plt.show()
 
